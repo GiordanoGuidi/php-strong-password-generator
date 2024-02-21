@@ -1,11 +1,18 @@
 <?php 
-include __DIR__ . '/functions.php';
+require_once __DIR__ . '/utils/functions.php';
 //RECUPERO I DATI
 $password_length= $_GET['length'] ?? '';
-var_dump($password_length);
-
-
+// var_dump($password_length);
 // var_dump(get_random_password($password_length));
+
+//SALVO IL VALORE DELLA FUNZIONE NELLA SESSIONE
+session_start();
+$_SESSION['random_email'] = get_random_password($password_length);
+var_dump($_SESSION);
+
+
+
+
 
 
 
@@ -37,6 +44,7 @@ var_dump($password_length);
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <p><?= get_random_password($password_length)?></p>
             </div>
         </main>
     </div>
