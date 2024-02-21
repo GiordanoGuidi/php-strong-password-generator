@@ -1,22 +1,11 @@
 <?php 
+include __DIR__ . '/functions.php';
 //RECUPERO I DATI
 $password_length= $_GET['length'] ?? '';
 var_dump($password_length);
 
-//#FUNZIONI
-//FUNZIONE CHE GENERA UNA PASSWORD CASUALE DI TOT LETTERE
-function get_random_password($password_length)
-{
-    $letter = ['abcdefghilmnopqrstuvz'];
-    $letter_string = str_split(implode($letter));
-    $password=[];
-    for($i=0; $i < $password_length; $i++){
-        $password[]= $letter_string[rand($i,count($letter_string))];
-    }
-    return implode($password);
-}
 
-var_dump(get_random_password($password_length));
+// var_dump(get_random_password($password_length));
 
 
 

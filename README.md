@@ -10,7 +10,7 @@ Una nostra funzione utilizzerà questo dato per generare una password casuale
 (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente.
 Scriviamo tutto (logica e layout) in un unico file index.php
 
-2. Milestone 2: verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.phpche includeremo poi nella pagina principale.
+2. Milestone 2: verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale.
 
 3. Milestone 3: invece di visualizzare la password nella index, effettuare un redirect ad una pagina dedicata che tramite $_SESSION recupererà la password da mostrare all’utente.
 
