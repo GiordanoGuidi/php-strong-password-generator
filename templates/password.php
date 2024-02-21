@@ -19,7 +19,7 @@ $random_password = $_SESSION['random_password'] ;
 <body class="bg-black text-white">
     <div class="container mt-5 bg-ligthblue rounded-2 p-3">
         <p> La tua nuova email è : <strong class="text-black"><?= $random_password ?></strong></p>
-        <a href="index.php">Torna al Password Generator</a>
+        <a class="text-decoration-none" href="index.php">Torna al Password Generator</a>
     </div>
 </body>
 </html>
