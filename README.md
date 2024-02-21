@@ -4,6 +4,7 @@
 Oggi creeremo una pagina in grado di generare una password per gli utenti.
 L'utente potrà scegliere la lunghezza password e ricevere in un alert una password con il numero di caratteri casuali da lui richiesto!
 Lo screen allegato è un riferimento, ma potete variare la grafica.
+---
 1. Milestone 1: creare un form che invii in GET la lunghezza della password.
 Una nostra funzione utilizzerà questo dato per generare una password casuale
 (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente.

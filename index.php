@@ -11,7 +11,7 @@ function get_random_password($password_length)
     $letter_string = str_split(implode($letter));
     $password=[];
     for($i=0; $i < $password_length; $i++){
-        $password[]= $letter_string[$i];
+        $password[]= $letter_string[rand($i,count($letter_string))];
     }
     return implode($password);
 }
