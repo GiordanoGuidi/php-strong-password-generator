@@ -2,21 +2,23 @@
 require_once __DIR__ . '/utils/functions.php';
 //RECUPERO I DATI
 $password_length= $_GET['length'] ?? '';
-// var_dump($password_length);
-// var_dump(get_random_password($password_length));
+var_dump($password_length);
+var_dump(get_random_password($password_length));
 
-//SALVO IL VALORE DELLA FUNZIONE NELLA SESSIONE
-session_start();
-$_SESSION['random_email'] = get_random_password($password_length);
-var_dump($_SESSION);
+/*SALVO IL VALORE DELLA FUNZIONE NELLA SESSIONE
+SOLO SE MI E' STATA FORNITA PRIMA LA LUNGHEZZA DELLA PASSWORD*/
+if($password_length){
+    session_start();
+    //SALVO IL VALORE DELLA FUNZIONE NELLA SESSIONE
+    $_SESSION['random_password'] = get_random_password($password_length);
+    var_dump($_SESSION);
+}
 
-
-
-
-
-
-
-
+/*FACCIO IL REDIRECT SOLO DOPO IL SALVATAGGIO
+ DEL VALORE NELLA SESSIONE*/
+if(isset($_SESSION['random_password'])){
+    header('Location: password.php');
+}
 
 ?>
 
@@ -44,7 +46,6 @@ var_dump($_SESSION);
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                <p><?= get_random_password($password_length)?></p>
             </div>
         </main>
     </div>
