@@ -1,5 +1,10 @@
 <?php 
 
+//#FUNZIONI
+
+$password_length= $_GET['length'] ?? '';
+var_dump($password_length);
+
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +26,8 @@
             <div class="container bg-warning">
                 <form action="" method="GET">
                     <div class="mb-3 d-flex align-items-center justify-content-between">
-                        <label for="password" class="form-label">Lunghezza Password:</label>
-                        <input type="password" class="form-control w-50">
+                        <label for="length" class="form-label">Lunghezza Password:</label>
+                        <input type="number" class="form-control w-50" name="length">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
