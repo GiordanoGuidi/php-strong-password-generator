@@ -3,12 +3,25 @@
 //FUNZIONE CHE GENERA UNA PASSWORD CASUALE DI TOT LETTERE
 function get_random_password($password_length)
 {
-    $letter = ['abcdefghilmnopqrstuvz'];
-    $letter_string = str_split(implode($letter));
-    $password=[];
-    for($i=0; $i < $password_length; $i++){
-        $password[]= $letter_string[array_rand($letter_string)];
+
+    $password = '';
+    $letter = 'abcdefghilmnopqrstuvz';
+    $numbers = '123456789';
+    $special_characters = '!£$%&/()=?^*éç°#¶§';
+
+    $characters = $letter . strtoupper($letter) . $special_characters;
+    //Numero totale di caratteri
+    $total_characters = mb_strlen($characters);
+    
+    
+    while(mb_strlen($password) < $password_length){
+        //Prendo un indice random
+        $random_index = rand(0, $total_characters -1 );
+        //Prendo un carattere a caso
+        $random_character = $characters[$random_index];
+        $password .= $random_character;
+        
     }
-    return implode($password);
+    return $password;
 }
 ?>
